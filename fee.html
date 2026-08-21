@@ -1,52 +1,592 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Fee Details</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fee Details - Bright Future College</title>
+
     <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            background: #f4f7fb;
+            font-family: Arial, sans-serif;
+        }
+
+        .fee-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .fee-page h1 {
+            color: #06285f;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .summary-card span {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .summary-card h2 {
+            color: #06285f;
+            margin: 8px 0 0;
+        }
+
+        .paid {
+            color: #267238 !important;
+        }
+
+        .pending {
+            color: #a66a00 !important;
+        }
+
+        .year-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            border-left: 5px solid #0b4b9b;
+        }
+
+        .year-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .year-title h2 {
+            color: #06285f;
+            margin: 0;
+        }
+
+        .status {
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-paid {
+            background: #e8f6ec;
+            color: #267238;
+        }
+
+        .status-pending {
+            background: #fff4df;
+            color: #a66a00;
+        }
+
+        .fee-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px;
+            background: #f5f8fc;
+            border-radius: 9px;
+            margin: 8px 0;
+            gap: 10px;
+        }
+
+        .fee-name {
+            color: #444;
+            font-weight: bold;
+        }
+
+        .fee-amount {
+            color: #06285f;
+            font-weight: bold;
+        }
+
+        .fee-status {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .govt-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            border-left: 5px solid #c48a00;
+        }
+
+        .govt-card h2 {
+            color: #06285f;
+            margin-top: 0;
+        }
+
+        .govt-card p {
+            color: #666;
+        }
+
+        .installment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px;
+            background: #fff8e8;
+            border-radius: 9px;
+            margin: 8px 0;
+            gap: 10px;
+        }
+
+        .installment b {
+            color: #444;
+        }
+
+        .installment span {
+            color: #a66a00;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 11px 18px;
+            background: #0b4b9b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .back-btn:hover {
+            background: #06285f;
+        }
+
+        @media (max-width: 700px) {
+
+            .fee-page {
+                padding: 15px;
+            }
+
+            .summary {
+                grid-template-columns: 1fr;
+            }
+
+            .year-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .fee-row,
+            .installment {
+                flex-wrap: wrap;
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
 
-<h1>💰 Fee Details</h1>
+<div class="fee-page">
 
-<table border="1" cellpadding="10">
-<tr>
-<th>Fee Type</th>
-<th>Amount</th>
-<th>Status</th>
-</tr>
+    <h1>
+        💰 Fee Details
+    </h1>
 
-<tr>
-<td>Tuition Fee</td>
-<td>₹45,000</td>
-<td>✅ Paid</td>
-</tr>
+    <p class="subtitle">
+        II B.Tech • ECE • Academic Fee Status
+    </p>
 
-<tr>
-<td>Exam Fee</td>
-<td>₹2,000</td>
-<td>✅ Paid</td>
-</tr>
 
-<tr>
-<td>Library Fee</td>
-<td>₹1,000</td>
-<td>✅ Paid</td>
-</tr>
+    <!-- SUMMARY -->
 
-<tr>
-<td>Bus Fee</td>
-<td>₹8,000</td>
-<td>❌ Pending</td>
-</tr>
+    <div class="summary">
 
-</table>
+        <div class="summary-card">
 
-<h2>Total Paid: ₹48,000</h2>
-<h2>Pending: ₹8,000</h2>
+            <span>
+                2nd Year College Fee
+            </span>
 
-<br>
+            <h2 class="paid">
+                ₹25,000 Paid
+            </h2>
 
-<a href="dashboard.html">⬅ Back to Dashboard</a>
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                2nd Year Bus Fee
+            </span>
+
+            <h2 class="paid">
+                ₹17,500 Paid
+            </h2>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>
+                Fee Reimbursement (RTF)
+            </span>
+
+            <h2 class="pending">
+                ₹60,200 Pending
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- 1ST YEAR -->
+
+    <div class="year-card">
+
+        <div class="year-title">
+
+            <h2>
+                🎓 1st Year
+            </h2>
+
+            <span class="status status-paid">
+                ✓ ALL FEES CLEARED
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                College / Tuition Fee
+            </span>
+
+            <span class="fee-amount">
+                Paid
+            </span>
+
+            <span class="fee-status paid">
+                ✅ Cleared
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                Bus Fee
+            </span>
+
+            <span class="fee-amount">
+                Paid
+            </span>
+
+            <span class="fee-status paid">
+                ✅ Cleared
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                Other Academic Fees
+            </span>
+
+            <span class="fee-amount">
+                Paid
+            </span>
+
+            <span class="fee-status paid">
+                ✅ Cleared
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- 2ND YEAR -->
+
+    <div class="year-card">
+
+        <div class="year-title">
+
+            <h2>
+                🎓 2nd Year
+            </h2>
+
+            <span class="status status-paid">
+                ✓ COLLEGE & BUS FEE PAID
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                College / Tuition Fee
+            </span>
+
+            <span class="fee-amount">
+                ₹25,000
+            </span>
+
+            <span class="fee-status paid">
+                ✅ Paid
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                Bus Fee
+            </span>
+
+            <span class="fee-amount">
+                ₹17,500
+            </span>
+
+            <span class="fee-status paid">
+                ✅ Paid
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                Fee Reimbursement (RTF)
+            </span>
+
+            <span class="fee-amount">
+                ₹60,200
+            </span>
+
+            <span class="fee-status pending">
+                ⏳ Pending
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEE REIMBURSEMENT -->
+
+    <div class="govt-card">
+
+        <h2>
+            🎓 Fee Reimbursement (RTF)
+        </h2>
+
+        <p>
+            Fee Reimbursement amount of
+            <b>₹60,200</b>
+            will be received in 3 installments.
+        </p>
+
+
+        <div class="installment">
+
+            <b>
+                1st Installment
+            </b>
+
+            <span>
+                ₹20,067 • ⏳ Pending
+            </span>
+
+        </div>
+
+
+        <div class="installment">
+
+            <b>
+                2nd Installment
+            </b>
+
+            <span>
+                ₹20,067 • ⏳ Pending
+            </span>
+
+        </div>
+
+
+        <div class="installment">
+
+            <b>
+                3rd Installment
+            </b>
+
+            <span>
+                ₹20,066 • ⏳ Pending
+            </span>
+
+        </div>
+
+
+        <p>
+            <strong>Total:</strong>
+            ₹60,200
+        </p>
+
+    </div>
+
+
+    <!-- 3RD YEAR -->
+
+    <div class="year-card">
+
+        <div class="year-title">
+
+            <h2>
+                🎓 3rd Year
+            </h2>
+
+            <span class="status status-pending">
+                ⏳ PENDING
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                College / Tuition Fee
+            </span>
+
+            <span class="fee-amount">
+                —
+            </span>
+
+            <span class="fee-status pending">
+                ⏳ Pending
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                Bus Fee
+            </span>
+
+            <span class="fee-amount">
+                —
+            </span>
+
+            <span class="fee-status pending">
+                ⏳ Pending
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- 4TH YEAR -->
+
+    <div class="year-card">
+
+        <div class="year-title">
+
+            <h2>
+                🎓 4th Year
+            </h2>
+
+            <span class="status status-pending">
+                ⏳ PENDING
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                College / Tuition Fee
+            </span>
+
+            <span class="fee-amount">
+                —
+            </span>
+
+            <span class="fee-status pending">
+                ⏳ Pending
+            </span>
+
+        </div>
+
+
+        <div class="fee-row">
+
+            <span class="fee-name">
+                Bus Fee
+            </span>
+
+            <span class="fee-amount">
+                —
+            </span>
+
+            <span class="fee-status pending">
+                ⏳ Pending
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <a href="dashboard.html"
+       class="back-btn">
+
+        ⬅ Back to Dashboard
+
+    </a>
+
+</div>
 
 </body>
+
 </html>

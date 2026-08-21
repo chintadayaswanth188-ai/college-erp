@@ -1,61 +1,469 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Internal Marks</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Internal Marks - Bright Future College</title>
+
     <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            background: #f4f7fb;
+            font-family: Arial, sans-serif;
+        }
+
+        .marks-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .marks-page h1 {
+            color: #06285f;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        /* NOTICE */
+
+        .marks-notice {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            text-align: center;
+
+            border-left: 5px solid #0b4b9b;
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,0.08);
+
+            margin-bottom: 25px;
+        }
+
+        .notice-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .marks-notice h2 {
+            color: #06285f;
+            margin: 5px 0 10px;
+        }
+
+        .marks-notice p {
+            color: #777;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* SUBJECT BOXES */
+
+        .marks-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .subject-card {
+            background: white;
+            padding: 22px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.07);
+
+            border-top: 4px solid #d9e1ec;
+        }
+
+        .subject-card h2 {
+            color: #06285f;
+            margin: 0 0 18px;
+            font-size: 17px;
+        }
+
+        .marks-row {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 10px 0;
+
+            border-bottom: 1px solid #eee;
+
+            color: #777;
+            font-size: 14px;
+        }
+
+        .empty-mark {
+            color: #c3cad4;
+            font-weight: bold;
+        }
+
+        .pending {
+            margin-top: 14px;
+
+            color: #888;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* TOTAL */
+
+        .total-card {
+            background: white;
+
+            margin-top: 22px;
+
+            padding: 22px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.07);
+
+            text-align: center;
+        }
+
+        .total-card h2 {
+            color: #06285f;
+            margin: 0 0 10px;
+        }
+
+        .total-value {
+            font-size: 32px;
+            color: #c3cad4;
+            font-weight: bold;
+        }
+
+        /* BACK BUTTON */
+
+        .back-btn {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 11px 18px;
+
+            background: #0b4b9b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+        }
+
+        .back-btn:hover {
+            background: #06285f;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .marks-page {
+                padding: 15px;
+            }
+
+            .marks-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
 
-<h1>📝 Internal Marks</h1>
 
-<table border="1" cellpadding="10">
-<tr>
-    <th>Subject</th>
-    <th>Internal-1</th>
-    <th>Internal-2</th>
-    <th>Assignment</th>
-    <th>Total</th>
-</tr>
+<div class="marks-page">
 
-<tr>
-    <td>Mathematics</td>
-    <td>23</td>
-    <td>24</td>
-    <td>5</td>
-    <td>52</td>
-</tr>
 
-<tr>
-    <td>Python Programming</td>
-    <td>22</td>
-    <td>23</td>
-    <td>5</td>
-    <td>50</td>
-</tr>
+    <h1>
+        📝 Internal Marks
+    </h1>
 
-<tr>
-    <td>Digital Electronics</td>
-    <td>24</td>
-    <td>25</td>
-    <td>5</td>
-    <td>54</td>
-</tr>
+    <p class="subtitle">
+        II B.Tech • ECE
+    </p>
 
-<tr>
-    <td>Communication Skills</td>
-    <td>21</td>
-    <td>22</td>
-    <td>5</td>
-    <td>48</td>
-</tr>
 
-</table>
+    <!-- NOTICE -->
 
-<h2>Total Internal Marks: 204 / 220</h2>
+    <div class="marks-notice">
 
-<br>
+        <div class="notice-icon">
+            📝
+        </div>
 
-<a href="dashboard.html">⬅ Back to Dashboard</a>
+        <h2>
+            Internal Marks Not Released
+        </h2>
+
+        <p>
+            Internal marks will be announced after the Mid Exams.
+        </p>
+
+    </div>
+
+
+    <!-- SUBJECTS -->
+
+    <div class="marks-grid">
+
+
+        <!-- SIGNALS -->
+
+        <div class="subject-card">
+
+            <h2>
+                📡 Signals and Systems
+            </h2>
+
+            <div class="marks-row">
+                <span>Internal-1</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Internal-2</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Assignment</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="pending">
+                Awaiting Marks
+            </div>
+
+        </div>
+
+
+        <!-- STLD -->
+
+        <div class="subject-card">
+
+            <h2>
+                💻 STLD
+            </h2>
+
+            <div class="marks-row">
+                <span>Internal-1</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Internal-2</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Assignment</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="pending">
+                Awaiting Marks
+            </div>
+
+        </div>
+
+
+        <!-- EDC -->
+
+        <div class="subject-card">
+
+            <h2>
+                ⚡ EDC
+            </h2>
+
+            <div class="marks-row">
+                <span>Internal-1</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Internal-2</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Assignment</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="pending">
+                Awaiting Marks
+            </div>
+
+        </div>
+
+
+        <!-- UHV -->
+
+        <div class="subject-card">
+
+            <h2>
+                🌱 UHV
+            </h2>
+
+            <div class="marks-row">
+                <span>Internal-1</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Internal-2</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Assignment</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="pending">
+                Awaiting Marks
+            </div>
+
+        </div>
+
+
+        <!-- ES -->
+
+        <div class="subject-card">
+
+            <h2>
+                🌍 ES
+            </h2>
+
+            <div class="marks-row">
+                <span>Internal-1</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Internal-2</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Assignment</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="pending">
+                Awaiting Marks
+            </div>
+
+        </div>
+
+
+        <!-- EDC LAB -->
+
+        <div class="subject-card">
+
+            <h2>
+                🔬 EDC Lab
+            </h2>
+
+            <div class="marks-row">
+                <span>Internal Marks</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Record</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="pending">
+                Awaiting Marks
+            </div>
+
+        </div>
+
+
+        <!-- STLD LAB -->
+
+        <div class="subject-card">
+
+            <h2>
+                🧪 STLD Lab
+            </h2>
+
+            <div class="marks-row">
+                <span>Internal Marks</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="marks-row">
+                <span>Record</span>
+                <span class="empty-mark">—</span>
+            </div>
+
+            <div class="pending">
+                Awaiting Marks
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- TOTAL -->
+
+    <div class="total-card">
+
+        <h2>
+            Total Internal Marks
+        </h2>
+
+        <div class="total-value">
+            — / —
+        </div>
+
+        <p>
+            Marks will be updated after Mid Exams.
+        </p>
+
+    </div>
+
+
+    <a href="dashboard.html"
+       class="back-btn">
+
+        ⬅ Back to Dashboard
+
+    </a>
+
+
+</div>
+
 
 </body>
+
 </html>

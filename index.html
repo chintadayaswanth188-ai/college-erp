@@ -1,24 +1,312 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Bright Future College</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bright Future College - Student Portal</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06285f,
+                    #0b4b9b,
+                    #1976d2
+                );
+        }
+
+        /* BACKGROUND DESIGN */
+
+        body::before {
+            content: "";
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.08);
+
+            top: -100px;
+            left: -100px;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.07);
+
+            bottom: -150px;
+            right: -120px;
+        }
+
+        /* LOGIN BOX */
+
+        .container {
+
+            width: 90%;
+            max-width: 400px;
+
+            background: rgba(255,255,255,0.97);
+
+            padding: 35px 30px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .college-icon {
+            width: 70px;
+            height: 70px;
+
+            margin: 0 auto 15px;
+
+            border-radius: 50%;
+
+            background: #06285f;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 32px;
+
+            box-shadow:
+                0 5px 15px rgba(6,40,95,0.25);
+        }
+
+        h1 {
+            margin: 5px 0;
+
+            color: #06285f;
+
+            font-size: 26px;
+        }
+
+        h2 {
+            margin: 5px 0 25px;
+
+            color: #777;
+
+            font-size: 16px;
+
+            font-weight: normal;
+        }
+
+        /* INPUTS */
+
+        .input-box {
+            width: 100%;
+
+            margin-bottom: 16px;
+
+            position: relative;
+        }
+
+        .input-box span {
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 18px;
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 14px 15px 14px 45px;
+
+            border: 1px solid #d8dee8;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            background: #f7f9fc;
+
+            transition: 0.2s;
+        }
+
+        input:focus {
+
+            border-color: #0b4b9b;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(11,75,155,0.12);
+        }
+
+        /* LOGIN BUTTON */
+
+        #loginBtn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06285f,
+                    #0b4b9b
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+            margin-top: 5px;
+        }
+
+        #loginBtn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 18px rgba(11,75,155,0.3);
+        }
+
+        .footer-text {
+
+            margin-top: 20px;
+
+            color: #888;
+
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 500px) {
+
+            .container {
+
+                padding: 30px 22px;
+
+            }
+
+            h1 {
+
+                font-size: 23px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
+
 <body>
+
 
 <div class="container">
 
+    <div class="college-icon">
+        🎓
+    </div>
+
     <h1>Bright Future College</h1>
+
     <h2>Student Portal</h2>
 
-    <input type="text" placeholder="Enter Hall Ticket Number"><br><br>
 
-    <input type="password" placeholder="Enter Password"><br><br>
+    <div class="input-box">
 
-    <button id="loginBtn">Login</button>
+        <span>🪪</span>
+
+        <input
+            type="text"
+            id="hallTicket"
+            placeholder="Enter Hall Ticket Number"
+        >
+
+    </div>
+
+
+    <div class="input-box">
+
+        <span>🔐</span>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+        >
+
+    </div>
+
+
+    <button id="loginBtn">
+        Login
+    </button>
+
+
+    <div class="footer-text">
+        © 2026 Bright Future College
+    </div>
 
 </div>
 
-  <script src="script.js"></script>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>

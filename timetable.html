@@ -1,82 +1,419 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Timetable</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Timetable - Bright Future College</title>
+
     <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+        .timetable-page {
+            padding: 25px;
+        }
+
+        .timetable-page h1 {
+            color: #06285f;
+            margin-bottom: 8px;
+        }
+
+        .timetable-page .subtitle {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .timetable-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .day-box {
+            background: white;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #0b4b9b;
+        }
+
+        .day-box h2 {
+            color: #06285f;
+            margin-bottom: 15px;
+        }
+
+        .subject {
+            background: #f5f8fc;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .time {
+            color: #0b4b9b;
+            font-weight: bold;
+        }
+
+        .break {
+            background: #fff4d6;
+            color: #8a6500;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .lunch {
+            background: #e8f5e9;
+            color: #267238;
+            padding: 11px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .lab {
+            background: #eaf1ff;
+            border-left: 4px solid #0b4b9b;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 11px 18px;
+            background: #0b4b9b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 650px) {
+            .timetable-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timetable-page {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>📅 Weekly Timetable</h1>
+<div class="timetable-page">
 
-<table border="1" cellpadding="10">
-<tr>
-<th>Day</th>
-<th>9:00-10:00</th>
-<th>10:00-11:00</th>
-<th>11:15-12:15</th>
-<th>1:00-2:00</th>
-<th>2:00-3:00</th>
-</tr>
+    <h1>📅 Weekly Timetable</h1>
 
-<tr>
-<td>Monday</td>
-<td>Maths</td>
-<td>Python</td>
-<td>DE</td>
-<td>Lab</td>
-<td>Lab</td>
-</tr>
+    <p class="subtitle">
+        II B.Tech • ECE | 09:00 AM – 04:50 PM
+    </p>
 
-<tr>
-<td>Tuesday</td>
-<td>English</td>
-<td>Python</td>
-<td>Maths</td>
-<td>Networks</td>
-<td>Library</td>
-</tr>
+    <div class="timetable-container">
 
-<tr>
-<td>Wednesday</td>
-<td>DE</td>
-<td>Maths</td>
-<td>Python</td>
-<td>Lab</td>
-<td>Sports</td>
-</tr>
+        <!-- MONDAY -->
+        <div class="day-box">
 
-<tr>
-<td>Thursday</td>
-<td>Networks</td>
-<td>English</td>
-<td>Maths</td>
-<td>Python</td>
-<td>Seminar</td>
-</tr>
+            <h2>Monday</h2>
 
-<tr>
-<td>Friday</td>
-<td>Python</td>
-<td>DE</td>
-<td>Networks</td>
-<td>Lab</td>
-<td>Lab</td>
-</tr>
+            <div class="subject">
+                <span class="time">09:00 – 09:50 AM</span>
+                — Signals and Systems
+            </div>
 
-<tr>
-<td>Saturday</td>
-<td>Seminar</td>
-<td>Project</td>
-<td>Library</td>
-<td>Sports</td>
-<td>Free</td>
-</tr>
+            <div class="subject">
+                <span class="time">09:50 – 10:40 AM</span>
+                — STLD
+            </div>
 
-</table>
+            <div class="break">
+                ☕ 10:40 – 10:50 AM — Break
+            </div>
 
-<br>
+            <div class="subject">
+                <span class="time">10:50 – 11:40 AM</span>
+                — EDC
+            </div>
 
-<a href="dashboard.html">⬅ Back to Dashboard</a>
+            <div class="subject">
+                <span class="time">11:40 – 12:30 PM</span>
+                — UHV
+            </div>
+
+            <div class="lunch">
+                🍱 12:30 – 01:20 PM — Lunch Break
+            </div>
+
+            <div class="subject">
+                <span class="time">01:20 – 02:10 PM</span>
+                — ES
+            </div>
+
+            <div class="subject lab">
+                <span class="time">02:10 – 03:00 PM</span>
+                — EDC LAB
+            </div>
+
+            <div class="break">
+                ☕ 03:00 – 03:10 PM — Break
+            </div>
+
+            <div class="subject lab">
+                <span class="time">03:10 – 04:50 PM</span>
+                — EDC LAB
+            </div>
+
+        </div>
+
+
+        <!-- TUESDAY -->
+        <div class="day-box">
+
+            <h2>Tuesday</h2>
+
+            <div class="subject">
+                <span class="time">09:00 – 09:50 AM</span>
+                — EDC
+            </div>
+
+            <div class="subject">
+                <span class="time">09:50 – 10:40 AM</span>
+                — Signals and Systems
+            </div>
+
+            <div class="break">
+                ☕ 10:40 – 10:50 AM — Break
+            </div>
+
+            <div class="subject">
+                <span class="time">10:50 – 11:40 AM</span>
+                — STLD
+            </div>
+
+            <div class="subject">
+                <span class="time">11:40 – 12:30 PM</span>
+                — ES
+            </div>
+
+            <div class="lunch">
+                🍱 12:30 – 01:20 PM — Lunch Break
+            </div>
+
+            <div class="subject">
+                <span class="time">01:20 – 02:10 PM</span>
+                — UHV
+            </div>
+
+            <div class="subject">
+                <span class="time">02:10 – 03:00 PM</span>
+                — Signals and Systems
+            </div>
+
+            <div class="break">
+                ☕ 03:00 – 03:10 PM — Break
+            </div>
+
+            <div class="subject">
+                <span class="time">03:10 – 04:00 PM</span>
+                — EDC
+            </div>
+
+            <div class="subject">
+                <span class="time">04:00 – 04:50 PM</span>
+                — STLD
+            </div>
+
+        </div>
+
+
+        <!-- WEDNESDAY -->
+        <div class="day-box">
+
+            <h2>Wednesday</h2>
+
+            <div class="subject">
+                <span class="time">09:00 – 09:50 AM</span>
+                — STLD
+            </div>
+
+            <div class="subject">
+                <span class="time">09:50 – 10:40 AM</span>
+                — EDC
+            </div>
+
+            <div class="break">
+                ☕ 10:40 – 10:50 AM — Break
+            </div>
+
+            <div class="subject">
+                <span class="time">10:50 – 11:40 AM</span>
+                — Signals and Systems
+            </div>
+
+            <div class="subject">
+                <span class="time">11:40 – 12:30 PM</span>
+                — ES
+            </div>
+
+            <div class="lunch">
+                🍱 12:30 – 01:20 PM — Lunch Break
+            </div>
+
+            <div class="subject">
+                <span class="time">01:20 – 02:10 PM</span>
+                — UHV
+            </div>
+
+            <div class="subject lab">
+                <span class="time">02:10 – 03:00 PM</span>
+                — STLD LAB
+            </div>
+
+            <div class="break">
+                ☕ 03:00 – 03:10 PM — Break
+            </div>
+
+            <div class="subject lab">
+                <span class="time">03:10 – 04:50 PM</span>
+                — STLD LAB
+            </div>
+
+        </div>
+
+
+        <!-- THURSDAY -->
+        <div class="day-box">
+
+            <h2>Thursday</h2>
+
+            <div class="subject">
+                <span class="time">09:00 – 09:50 AM</span>
+                — UHV
+            </div>
+
+            <div class="subject">
+                <span class="time">09:50 – 10:40 AM</span>
+                — ES
+            </div>
+
+            <div class="break">
+                ☕ 10:40 – 10:50 AM — Break
+            </div>
+
+            <div class="subject">
+                <span class="time">10:50 – 11:40 AM</span>
+                — EDC
+            </div>
+
+            <div class="subject">
+                <span class="time">11:40 – 12:30 PM</span>
+                — STLD
+            </div>
+
+            <div class="lunch">
+                🍱 12:30 – 01:20 PM — Lunch Break
+            </div>
+
+            <div class="subject">
+                <span class="time">01:20 – 02:10 PM</span>
+                — Signals and Systems
+            </div>
+
+            <div class="subject">
+                <span class="time">02:10 – 03:00 PM</span>
+                — UHV
+            </div>
+
+            <div class="break">
+                ☕ 03:00 – 03:10 PM — Break
+            </div>
+
+            <div class="subject">
+                <span class="time">03:10 – 04:00 PM</span>
+                — ES
+            </div>
+
+            <div class="subject">
+                <span class="time">04:00 – 04:50 PM</span>
+                — EDC
+            </div>
+
+        </div>
+
+
+        <!-- FRIDAY -->
+        <div class="day-box">
+
+            <h2>Friday</h2>
+
+            <div class="subject">
+                <span class="time">09:00 – 09:50 AM</span>
+                — Signals and Systems
+            </div>
+
+            <div class="subject">
+                <span class="time">09:50 – 10:40 AM</span>
+                — EDC
+            </div>
+
+            <div class="break">
+                ☕ 10:40 – 10:50 AM — Break
+            </div>
+
+            <div class="subject">
+                <span class="time">10:50 – 11:40 AM</span>
+                — STLD
+            </div>
+
+            <div class="subject">
+                <span class="time">11:40 – 12:30 PM</span>
+                — UHV
+            </div>
+
+            <div class="lunch">
+                🍱 12:30 – 01:20 PM — Lunch Break
+            </div>
+
+            <div class="subject">
+                <span class="time">01:20 – 02:10 PM</span>
+                — ES
+            </div>
+
+            <div class="subject">
+                <span class="time">02:10 – 03:00 PM</span>
+                — Signals and Systems
+            </div>
+
+            <div class="break">
+                ☕ 03:00 – 03:10 PM — Break
+            </div>
+
+            <div class="subject">
+                <span class="time">03:10 – 04:00 PM</span>
+                — EDC
+            </div>
+
+            <div class="subject">
+                <span class="time">04:00 – 04:50 PM</span>
+                — ES
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="dashboard.html" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
+</div>
 
 </body>
 </html>

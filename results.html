@@ -1,42 +1,282 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Results</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Results - Bright Future College</title>
+
     <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            background: #f4f7fb;
+            font-family: Arial, sans-serif;
+        }
+
+        .results-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .results-page h1 {
+            color: #06285f;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        /* RESULT NOTICE */
+
+        .result-notice {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+
+            border-left: 5px solid #0b4b9b;
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,0.08);
+
+            margin-bottom: 25px;
+        }
+
+        .result-notice .icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .result-notice h2 {
+            color: #06285f;
+            margin: 5px 0 10px;
+        }
+
+        .result-notice p {
+            color: #777;
+            margin: 0;
+        }
+
+        /* EMPTY RESULT CARDS */
+
+        .result-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .result-card {
+            background: white;
+            min-height: 150px;
+
+            padding: 22px;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.07);
+
+            border-top: 4px solid #d9e1ec;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .result-card h2 {
+            color: #06285f;
+            margin: 0 0 12px;
+        }
+
+        .empty-value {
+            font-size: 30px;
+            color: #c5ccd6;
+            font-weight: bold;
+        }
+
+        .pending {
+            margin-top: 8px;
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* BACK BUTTON */
+
+        .back-btn {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 11px 18px;
+
+            background: #0b4b9b;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+        }
+
+        .back-btn:hover {
+            background: #06285f;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .results-page {
+                padding: 15px;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-<h1>📄 Semester Results</h1>
 
-<table border="1" cellpadding="10">
-<tr>
-<th>Semester</th>
-<th>SGPA</th>
-</tr>
+<div class="results-page">
 
-<tr>
-<td>1-1</td>
-<td>8.2</td>
-</tr>
 
-<tr>
-<td>1-2</td>
-<td>8.5</td>
-</tr>
+    <h1>
+        📄 Semester Results
+    </h1>
 
-<tr>
-<td>2-1</td>
-<td>8.7</td>
-</tr>
+    <p class="subtitle">
+        II B.Tech • ECE
+    </p>
 
-</table>
 
-<h2>CGPA : 8.46</h2>
+    <!-- RESULT NOTICE -->
 
-<br>
+    <div class="result-notice">
 
-<a href="dashboard.html">⬅ Back to Dashboard</a>
+        <div class="icon">
+            📋
+        </div>
+
+        <h2>
+            Results Not Released
+        </h2>
+
+        <p>
+            Results will be updated after the semester examinations.
+        </p>
+
+    </div>
+
+
+    <!-- EMPTY RESULT BOXES -->
+
+    <div class="result-grid">
+
+
+        <div class="result-card">
+
+            <h2>
+                SGPA
+            </h2>
+
+            <div class="empty-value">
+                —
+            </div>
+
+            <div class="pending">
+                Awaiting Result
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h2>
+                CGPA
+            </h2>
+
+            <div class="empty-value">
+                —
+            </div>
+
+            <div class="pending">
+                Awaiting Result
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h2>
+                Result Status
+            </h2>
+
+            <div class="empty-value">
+                —
+            </div>
+
+            <div class="pending">
+                Not Available
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- SUBJECT RESULTS -->
+
+    <div class="result-notice"
+         style="margin-top:22px;">
+
+        <h2>
+            📚 Subject Results
+        </h2>
+
+        <p>
+            Subject-wise marks and grades will be displayed here
+            after the semester examinations and result declaration.
+        </p>
+
+    </div>
+
+
+    <a href="dashboard.html"
+       class="back-btn">
+
+        ⬅ Back to Dashboard
+
+    </a>
+
+
+</div>
+
 
 </body>
+
 </html>
