@@ -123,9 +123,7 @@ body {
 
 .main {
     margin-left: 250px;
-
     width: calc(100% - 250px);
-
     padding: 25px 30px;
 }
 
@@ -145,13 +143,11 @@ body {
 
 .topbar h1 {
     color: #06285f;
-
     font-size: 28px;
 }
 
 .topbar p {
     margin-top: 5px;
-
     color: #6b7280;
 }
 
@@ -208,17 +204,15 @@ body {
     height: 300px;
 
     border-radius: 18px;
-
     overflow: hidden;
 
     position: relative;
 
     margin-bottom: 25px;
 
-    /*
-       IMPORTANT:
-       dashboard.css is in the main folder
-       images folder is also in the main folder
+    /* IMPORTANT:
+       campus.jpg is in the SAME folder
+       as dashboard.css and dashboard.html
     */
 
     background-image:
@@ -226,11 +220,11 @@ body {
             rgba(0, 20, 55, 0.10),
             rgba(0, 20, 55, 0.35)
         ),
-        url("./images/campus.jpg");
+        url("./campus.jpg");
 
     background-size: cover;
 
-    background-position: center;
+    background-position: center center;
 
     background-repeat: no-repeat;
 
@@ -239,9 +233,9 @@ body {
 }
 
 
-/*
-   HTML <img> is hidden because
-   campus photo is now used as CSS background.
+/* HTML IMAGE HIDDEN
+   because campus photo is used
+   as CSS background
 */
 
 .campus-banner img {
@@ -271,7 +265,9 @@ body {
 }
 
 
-/* BANNER TEXT */
+/* =========================================
+   BANNER TEXT
+   ========================================= */
 
 .banner-content {
     position: absolute;
@@ -557,7 +553,6 @@ body {
     .schedule-subject {
         text-align: left;
     }
-
 }
 
 
@@ -686,7 +681,6 @@ footer {
         grid-template-columns:
             repeat(3, 1fr);
     }
-
 }
 
 
@@ -828,6 +822,13 @@ footer {
         border-radius: 14px;
 
         margin-bottom: 18px;
+
+        background-image:
+            linear-gradient(
+                rgba(0, 20, 55, 0.10),
+                rgba(0, 20, 55, 0.35)
+            ),
+            url("./campus.jpg");
 
         background-size: cover;
 
@@ -975,5 +976,4 @@ footer {
 
         padding: 20px 0 8px;
     }
-
 }
