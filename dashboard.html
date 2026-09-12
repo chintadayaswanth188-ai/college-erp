@@ -62,6 +62,31 @@
             color: #777;
         }
 
+        /* PROFILE PHOTO IN TOP BAR */
+
+        .student-mini .avatar {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #18245f;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .student-mini .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
         @media (max-width: 600px) {
 
             .schedule-item {
@@ -92,7 +117,6 @@
 
         <div class="brand">
 
-            <!-- LOGO -->
             <img src="./logo.png"
                  alt="BFC Logo">
 
@@ -172,7 +196,10 @@
 
             <div class="student-mini">
 
-                <div class="avatar">
+                <!-- PROFILE PHOTO / CY -->
+
+                <div class="avatar"
+                     id="dashboardAvatar">
                     CY
                 </div>
 
@@ -196,7 +223,6 @@
 
         <section class="campus-banner">
 
-            <!-- CAMPUS IMAGE -->
             <img src="./campus.jpg"
                  alt="Bright Future College Campus">
 
@@ -622,7 +648,6 @@ const timetable = {
 
     ],
 
-
     Tuesday: [
 
         ["09:00 – 09:50 AM", "EDC"],
@@ -639,7 +664,6 @@ const timetable = {
 
     ],
 
-
     Wednesday: [
 
         ["09:00 – 09:50 AM", "STLD"],
@@ -654,7 +678,6 @@ const timetable = {
         ["03:10 – 04:50 PM", "STLD LAB"]
 
     ],
-
 
     Thursday: [
 
@@ -671,7 +694,6 @@ const timetable = {
         ["04:00 – 04:50 PM", "EDC"]
 
     ],
-
 
     Friday: [
 
@@ -695,14 +717,12 @@ const timetable = {
 
 const today = new Date();
 
-
 const dayName = today.toLocaleDateString(
     "en-US",
     {
         weekday: "long"
     }
 );
-
 
 const dateText = today.toLocaleDateString(
     "en-IN",
@@ -713,15 +733,12 @@ const dateText = today.toLocaleDateString(
     }
 );
 
-
 document.getElementById("todayDate").innerText =
     dayName + " • " + dateText;
 
 
-
 const todaySchedule =
     timetable[dayName];
-
 
 const scheduleBox =
     document.getElementById("todaySchedule");
@@ -778,6 +795,38 @@ if (todaySchedule) {
         </div>
 
     `;
+
+}
+
+</script>
+
+
+
+<!-- LOAD PROFILE PHOTO FROM LOCAL STORAGE -->
+
+<script>
+
+const savedProfilePhoto =
+    localStorage.getItem("studentProfilePhoto");
+
+const dashboardAvatar =
+    document.getElementById("dashboardAvatar");
+
+
+if (savedProfilePhoto && dashboardAvatar) {
+
+    dashboardAvatar.innerHTML = "";
+
+    const img =
+        document.createElement("img");
+
+    img.src =
+        savedProfilePhoto;
+
+    img.alt =
+        "Student Photo";
+
+    dashboardAvatar.appendChild(img);
 
 }
 
