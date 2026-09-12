@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" 
-    content="width=device-width, initial-scale=1.0">
 
     <title>Student Profile - Bright Future College</title>
 
@@ -69,6 +68,10 @@
             font-weight: bold;
         }
 
+        .upload-btn:hover {
+            background: #eef4ff;
+        }
+
         .profile-info h1 {
             margin: 0 0 8px;
             font-size: 28px;
@@ -110,6 +113,7 @@
         .info-row {
             display: flex;
             justify-content: space-between;
+            gap: 15px;
             padding: 12px 0;
             border-bottom: 1px solid #eee;
         }
@@ -120,6 +124,7 @@
 
         .info-value {
             font-weight: bold;
+            text-align: right;
         }
 
         .back-btn {
@@ -132,6 +137,15 @@
             border-radius: 8px;
         }
 
+        .back-btn:hover {
+            background: #06285f;
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
         @media (max-width: 650px) {
 
             .profile-page {
@@ -141,20 +155,56 @@
             .profile-header {
                 flex-direction: column;
                 text-align: center;
+                padding: 25px 18px;
+            }
+
+            .profile-info h1 {
+                font-size: 23px;
+            }
+
+            .profile-info p {
+                font-size: 13px;
             }
 
             .profile-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .profile-card {
+                padding: 17px;
+            }
+
+            .profile-card h2 {
+                font-size: 18px;
+            }
+
+            .info-row {
+                gap: 10px;
+                font-size: 13px;
+            }
+
+            .info-value {
+                max-width: 55%;
+            }
+
+            .back-btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 
+
 <body>
 
 <div class="profile-page">
 
-    <!-- PROFILE HEADER -->
+
+    <!-- =========================================
+         PROFILE HEADER
+         ========================================= -->
 
     <div class="profile-header">
 
@@ -162,9 +212,11 @@
 
             <div class="profile-photo">
 
-                <img id="studentPhoto"
-                     src=""
-                     alt="Student Photo">
+                <img
+                    id="studentPhoto"
+                    src=""
+                    alt="Student Photo"
+                >
 
                 <div id="photoPlaceholder">
                     👤
@@ -172,9 +224,14 @@
 
             </div>
 
-            <label for="photoUpload" class="upload-btn">
+
+            <label
+                for="photoUpload"
+                class="upload-btn"
+            >
                 📷 Change Photo
             </label>
+
 
             <input
                 type="file"
@@ -203,69 +260,134 @@
     </div>
 
 
-    <!-- STUDENT DETAILS -->
+    <!-- =========================================
+         STUDENT DETAILS
+         ========================================= -->
 
     <div class="profile-grid">
+
+
+        <!-- PERSONAL INFORMATION -->
 
         <div class="profile-card">
 
             <h2>👤 Personal Information</h2>
 
             <div class="info-row">
-                <span class="info-label">Full Name</span>
-                <span class="info-value">Chintada Yaswanth</span>
+                <span class="info-label">
+                    Full Name
+                </span>
+
+                <span class="info-value">
+                    Chintada Yaswanth
+                </span>
             </div>
 
-            <div class="info-row">
-                <span class="info-label">Date of Birth</span>
-                <span class="info-value">08 April 2007</span>
-            </div>
 
             <div class="info-row">
-                <span class="info-label">Gender</span>
-                <span class="info-value">Male</span>
+                <span class="info-label">
+                    Date of Birth
+                </span>
+
+                <span class="info-value">
+                    08 April 2007
+                </span>
             </div>
 
-            <div class="info-row">
-                <span class="info-label">Mobile</span>
-                <span class="info-value">XXXXXXXXXX</span>
-            </div>
 
             <div class="info-row">
-                <span class="info-label">Email</span>
-                <span class="info-value">student@email.com</span>
+                <span class="info-label">
+                    Gender
+                </span>
+
+                <span class="info-value">
+                    Male
+                </span>
+            </div>
+
+
+            <div class="info-row">
+                <span class="info-label">
+                    Mobile
+                </span>
+
+                <span class="info-value">
+                    XXXXXXXXXX
+                </span>
+            </div>
+
+
+            <div class="info-row">
+                <span class="info-label">
+                    Email
+                </span>
+
+                <span class="info-value">
+                    student@email.com
+                </span>
             </div>
 
         </div>
 
+
+        <!-- COLLEGE INFORMATION -->
 
         <div class="profile-card">
 
             <h2>🎓 College Information</h2>
 
             <div class="info-row">
-                <span class="info-label">Roll Number</span>
-                <span class="info-value">25ME1A04E9</span>
+                <span class="info-label">
+                    Roll Number
+                </span>
+
+                <span class="info-value">
+                    25ME1A04E9
+                </span>
             </div>
 
-            <div class="info-row">
-                <span class="info-label">Course</span>
-                <span class="info-value">B.Tech</span>
-            </div>
 
             <div class="info-row">
-                <span class="info-label">Branch</span>
-                <span class="info-value">ECE</span>
+                <span class="info-label">
+                    Course
+                </span>
+
+                <span class="info-value">
+                    B.Tech
+                </span>
             </div>
 
-            <div class="info-row">
-                <span class="info-label">Year</span>
-                <span class="info-value">II Year</span>
-            </div>
 
             <div class="info-row">
-                <span class="info-label">Academic Year</span>
-                <span class="info-value">2026 - 2027</span>
+                <span class="info-label">
+                    Branch
+                </span>
+
+                <span class="info-value">
+                    ECE
+                </span>
+            </div>
+
+
+            <div class="info-row">
+                <span class="info-label">
+                    Year
+                </span>
+
+                <span class="info-value">
+                    II Year
+                </span>
+            </div>
+
+
+            <div class="info-row">
+                <span class="info-label">
+                    Academic Year
+                </span>
+
+                <span class="info-value">
+                    2026 - 2027
+                </span>
             </div>
 
         </div>
@@ -273,46 +395,116 @@
     </div>
 
 
-    <a href="dashboard.html" class="back-btn">
+    <!-- BACK BUTTON -->
+
+    <a
+        href="dashboard.html"
+        class="back-btn"
+    >
         ← Back to Dashboard
     </a>
 
 </div>
 
 
-<!-- PHOTO UPLOAD JAVASCRIPT -->
+<!-- =========================================
+     PHOTO SAVE JAVASCRIPT
+     ========================================= -->
 
 <script>
 
-const photoUpload = document.getElementById("photoUpload");
+const photoUpload =
+    document.getElementById("photoUpload");
 
-const studentPhoto = document.getElementById("studentPhoto");
+const studentPhoto =
+    document.getElementById("studentPhoto");
 
 const photoPlaceholder =
     document.getElementById("photoPlaceholder");
 
 
+/* =========================================
+   LOAD SAVED PHOTO WHEN PAGE OPENS
+   ========================================= */
+
+const savedPhoto =
+    localStorage.getItem("studentProfilePhoto");
+
+
+if (savedPhoto) {
+
+    studentPhoto.src = savedPhoto;
+
+    studentPhoto.style.display = "block";
+
+    photoPlaceholder.style.display = "none";
+}
+
+
+/* =========================================
+   SELECT NEW PHOTO
+   ========================================= */
+
 photoUpload.addEventListener("change", function () {
 
     const file = this.files[0];
 
-    if (file) {
-
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-
-            studentPhoto.src = e.target.result;
-
-            studentPhoto.style.display = "block";
-
-            photoPlaceholder.style.display = "none";
-
-        };
-
-        reader.readAsDataURL(file);
-
+    if (!file) {
+        return;
     }
+
+
+    /* CHECK FILE TYPE */
+
+    if (!file.type.startsWith("image/")) {
+
+        alert("Please select an image file.");
+
+        return;
+    }
+
+
+    /* READ IMAGE */
+
+    const reader = new FileReader();
+
+
+    reader.onload = function (e) {
+
+        const imageData =
+            e.target.result;
+
+
+        /* SHOW PHOTO */
+
+        studentPhoto.src = imageData;
+
+        studentPhoto.style.display = "block";
+
+        photoPlaceholder.style.display = "none";
+
+
+        /* SAVE PHOTO */
+
+        try {
+
+            localStorage.setItem(
+                "studentProfilePhoto",
+                imageData
+            );
+
+        } catch (error) {
+
+            alert(
+                "Photo is too large. Please choose a smaller image."
+            );
+
+        }
+
+    };
+
+
+    reader.readAsDataURL(file);
 
 });
 
