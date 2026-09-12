@@ -62,30 +62,57 @@
             color: #777;
         }
 
-        /* PROFILE PHOTO IN TOP BAR */
 
-        .student-mini .avatar {
-            width: 48px;
-            height: 48px;
-            min-width: 48px;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* =========================================
+           PROFILE PHOTO - DESKTOP
+        ========================================= */
+
+        .student-mini .avatar,
+        #dashboardAvatar {
+            width: 48px !important;
+            height: 48px !important;
+            min-width: 48px !important;
+            min-height: 48px !important;
+
+            border-radius: 50% !important;
+            overflow: hidden !important;
+
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+
             background: #18245f;
             color: white;
+
             font-weight: bold;
             font-size: 16px;
+
+            flex-shrink: 0;
         }
 
-        .student-mini .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
+        .student-mini .avatar img,
+        #dashboardAvatar img {
+            width: 100% !important;
+            height: 100% !important;
+
+            min-width: 100% !important;
+            min-height: 100% !important;
+
+            max-width: none !important;
+            max-height: none !important;
+
+            object-fit: cover !important;
+            object-position: center !important;
+
+            border-radius: 50% !important;
+
+            display: block !important;
         }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
 
         @media (max-width: 600px) {
 
@@ -97,6 +124,49 @@
 
             .schedule-subject {
                 text-align: left;
+            }
+
+
+            /* MOBILE PROFILE CARD PHOTO */
+
+            .student-mini .avatar,
+            #dashboardAvatar {
+                width: 92px !important;
+                height: 92px !important;
+
+                min-width: 92px !important;
+                min-height: 92px !important;
+
+                max-width: 92px !important;
+                max-height: 92px !important;
+
+                border-radius: 50% !important;
+                overflow: hidden !important;
+
+                flex-shrink: 0 !important;
+
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .student-mini .avatar img,
+            #dashboardAvatar img {
+                width: 92px !important;
+                height: 92px !important;
+
+                min-width: 92px !important;
+                min-height: 92px !important;
+
+                max-width: 92px !important;
+                max-height: 92px !important;
+
+                object-fit: cover !important;
+                object-position: center !important;
+
+                border-radius: 50% !important;
+
+                display: block !important;
             }
 
         }
@@ -111,7 +181,9 @@
 <div class="layout">
 
 
-    <!-- SIDEBAR -->
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
 
     <aside class="sidebar">
 
@@ -174,7 +246,9 @@
 
 
 
-    <!-- MAIN CONTENT -->
+    <!-- =========================================
+         MAIN
+    ========================================== -->
 
     <main class="main">
 
@@ -196,16 +270,19 @@
 
             <div class="student-mini">
 
-                <!-- PROFILE PHOTO / CY -->
+                <!-- PROFILE PHOTO -->
 
                 <div class="avatar"
                      id="dashboardAvatar">
                     CY
                 </div>
 
+
                 <div>
 
-                    <b>Ch. Yaswanth</b>
+                    <b>
+                        Ch. Yaswanth
+                    </b>
 
                     <small>
                         II B.Tech • ECE
@@ -219,7 +296,9 @@
 
 
 
-        <!-- CAMPUS BANNER -->
+        <!-- =========================================
+             CAMPUS BANNER
+        ========================================== -->
 
         <section class="campus-banner">
 
@@ -242,7 +321,9 @@
 
 
 
-        <!-- STAT CARDS -->
+        <!-- =========================================
+             STAT CARDS
+        ========================================== -->
 
         <section class="stats">
 
@@ -338,12 +419,14 @@
 
 
 
-        <!-- CONTENT GRID -->
+        <!-- =========================================
+             CONTENT GRID
+        ========================================== -->
 
         <section class="content-grid">
 
 
-            <!-- PROFILE -->
+            <!-- STUDENT INFORMATION -->
 
             <div class="panel profile-panel">
 
@@ -613,6 +696,8 @@
 
 
 
+        <!-- FOOTER -->
+
         <footer>
 
             © 2026 Bright Future College
@@ -627,7 +712,9 @@
 
 
 
-<!-- AUTOMATIC TODAY'S TIMETABLE -->
+<!-- =========================================
+     AUTOMATIC TODAY'S TIMETABLE
+========================================== -->
 
 <script>
 
@@ -648,6 +735,7 @@ const timetable = {
 
     ],
 
+
     Tuesday: [
 
         ["09:00 – 09:50 AM", "EDC"],
@@ -664,6 +752,7 @@ const timetable = {
 
     ],
 
+
     Wednesday: [
 
         ["09:00 – 09:50 AM", "STLD"],
@@ -678,6 +767,7 @@ const timetable = {
         ["03:10 – 04:50 PM", "STLD LAB"]
 
     ],
+
 
     Thursday: [
 
@@ -694,6 +784,7 @@ const timetable = {
         ["04:00 – 04:50 PM", "EDC"]
 
     ],
+
 
     Friday: [
 
@@ -717,12 +808,14 @@ const timetable = {
 
 const today = new Date();
 
+
 const dayName = today.toLocaleDateString(
     "en-US",
     {
         weekday: "long"
     }
 );
+
 
 const dateText = today.toLocaleDateString(
     "en-IN",
@@ -733,12 +826,15 @@ const dateText = today.toLocaleDateString(
     }
 );
 
+
 document.getElementById("todayDate").innerText =
     dayName + " • " + dateText;
 
 
+
 const todaySchedule =
     timetable[dayName];
+
 
 const scheduleBox =
     document.getElementById("todaySchedule");
@@ -802,33 +898,58 @@ if (todaySchedule) {
 
 
 
-<!-- LOAD PROFILE PHOTO FROM LOCAL STORAGE -->
+<!-- =========================================
+     LOAD PROFILE PHOTO
+========================================== -->
 
 <script>
 
-const savedProfilePhoto =
-    localStorage.getItem("studentProfilePhoto");
+(function () {
 
-const dashboardAvatar =
-    document.getElementById("dashboardAvatar");
+    const dashboardAvatar =
+        document.getElementById("dashboardAvatar");
+
+    if (!dashboardAvatar) {
+        return;
+    }
 
 
-if (savedProfilePhoto && dashboardAvatar) {
+    const savedProfilePhoto =
+        localStorage.getItem("studentProfilePhoto");
 
-    dashboardAvatar.innerHTML = "";
 
-    const img =
-        document.createElement("img");
+    if (savedProfilePhoto) {
 
-    img.src =
-        savedProfilePhoto;
+        const img =
+            document.createElement("img");
 
-    img.alt =
-        "Student Photo";
+        img.src =
+            savedProfilePhoto;
 
-    dashboardAvatar.appendChild(img);
+        img.alt =
+            "Student Photo";
 
-}
+
+        img.onload = function () {
+
+            dashboardAvatar.innerHTML = "";
+
+            dashboardAvatar.appendChild(img);
+
+        };
+
+
+        img.onerror = function () {
+
+            console.log(
+                "Profile photo could not be loaded."
+            );
+
+        };
+
+    }
+
+})();
 
 </script>
 
