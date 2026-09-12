@@ -1,3 +1,7 @@
+/* =========================================
+   RESET
+   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -68,7 +72,9 @@ body {
 }
 
 
-/* NAVIGATION */
+/* =========================================
+   NAVIGATION
+   ========================================= */
 
 .sidebar nav {
     margin-top: 22px;
@@ -104,6 +110,10 @@ body {
     text-align: center;
 
     font-weight: bold;
+}
+
+.logout:hover {
+    background: #9f7508;
 }
 
 
@@ -194,9 +204,10 @@ body {
    ========================================= */
 
 .campus-banner {
-    height: 210px;
+    width: 100%;
+    height: 300px;
 
-    border-radius: 16px;
+    border-radius: 18px;
 
     overflow: hidden;
 
@@ -204,35 +215,93 @@ body {
 
     margin-bottom: 25px;
 
+    /*
+       IMPORTANT:
+       dashboard.css is in the main folder
+       images folder is also in the main folder
+    */
+
+    background-image:
+        linear-gradient(
+            rgba(0, 20, 55, 0.10),
+            rgba(0, 20, 55, 0.35)
+        ),
+        url("./images/campus.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
     box-shadow:
-        0 5px 20px rgba(0,0,0,0.12);
+        0 8px 25px rgba(0,0,0,0.15);
 }
+
+
+/*
+   HTML <img> is hidden because
+   campus photo is now used as CSS background.
+*/
 
 .campus-banner img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+    display: none;
 }
+
+
+/* DARK PROFESSIONAL OVERLAY */
+
+.campus-banner::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 20, 55, 0.58),
+            rgba(0, 20, 55, 0.08)
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* BANNER TEXT */
 
 .banner-content {
     position: absolute;
 
-    left: 30px;
-    bottom: 25px;
+    left: 32px;
+
+    bottom: 30px;
+
+    z-index: 2;
 
     color: white;
 
     text-shadow:
-        0 2px 5px #000;
+        0 2px 8px rgba(0,0,0,0.85);
 }
 
 .banner-content h2 {
-    font-size: 28px;
+    font-size: 30px;
+
+    margin: 0;
+
+    font-weight: 700;
 }
 
 .banner-content p {
-    margin-top: 5px;
+    margin-top: 7px;
+
+    font-size: 15px;
+
+    font-weight: 500;
 }
 
 
@@ -266,6 +335,15 @@ body {
 
     box-shadow:
         0 4px 15px rgba(0,0,0,0.06);
+
+    transition: 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.09);
 }
 
 .stat-card span {
@@ -362,6 +440,10 @@ body {
     font-weight: bold;
 }
 
+.panel-title a:hover {
+    text-decoration: underline;
+}
+
 
 /* =========================================
    PROFILE
@@ -395,28 +477,87 @@ body {
    TIMETABLE
    ========================================= */
 
-.schedule div {
+.today-date {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-top: -8px;
+
+    margin-bottom: 15px;
+}
+
+.schedule {
     display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.schedule-item {
+    display: flex;
+
+    align-items: center;
 
     justify-content: space-between;
 
-    padding: 11px 13px;
+    gap: 12px;
 
-    margin-bottom: 8px;
+    padding: 11px 13px;
 
     background: #f5f8fc;
 
-    border-radius: 8px;
+    border-radius: 9px;
+
+    border-left: 4px solid #0b4b9b;
 }
 
-.schedule b {
+.schedule-time {
     color: #0b4b9b;
 
-    font-size: 13px;
+    font-size: 12px;
+
+    font-weight: bold;
+
+    min-width: 125px;
 }
 
-.schedule span {
-    font-size: 13px;
+.schedule-subject {
+    color: #06285f;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-align: right;
+}
+
+.break-item {
+    border-left-color: #999;
+
+    background: #f1f1f1;
+}
+
+.break-item .schedule-time,
+.break-item .schedule-subject {
+    color: #777;
+}
+
+@media (max-width: 600px) {
+
+    .schedule-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+    }
+
+    .schedule-subject {
+        text-align: left;
+    }
+
 }
 
 
@@ -675,31 +816,38 @@ footer {
     }
 
 
-    /* CAMPUS */
+    /* =====================================
+       MOBILE CAMPUS BANNER
+       ===================================== */
 
     .campus-banner {
         width: 100%;
 
-        height: 160px;
+        height: 200px;
+
+        border-radius: 14px;
 
         margin-bottom: 18px;
+
+        background-size: cover;
+
+        background-position: center center;
+
+        background-repeat: no-repeat;
     }
 
     .campus-banner img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
+        display: none;
     }
 
     .banner-content {
         left: 18px;
 
-        bottom: 15px;
+        bottom: 18px;
     }
 
     .banner-content h2 {
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .banner-content p {
@@ -770,16 +918,22 @@ footer {
 
     /* TODAY TIMETABLE */
 
-    .schedule div {
+    .schedule-item {
         display: block;
 
         padding: 11px;
     }
 
-    .schedule b {
+    .schedule-time {
         display: block;
 
         margin-bottom: 5px;
+    }
+
+    .schedule-subject {
+        display: block;
+
+        text-align: left;
     }
 
 
