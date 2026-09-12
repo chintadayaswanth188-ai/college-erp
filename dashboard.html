@@ -10,11 +10,9 @@
 
     <title>BFC Student Portal</title>
 
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="./dashboard.css">
 
     <style>
-
-        /* TODAY'S TIMETABLE */
 
         .today-date {
             color: #777;
@@ -34,13 +32,9 @@
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-
             padding: 11px 13px;
-
             background: #f5f8fc;
-
             border-radius: 9px;
-
             border-left: 4px solid #0b4b9b;
         }
 
@@ -89,7 +83,6 @@
 
 <body>
 
-
 <div class="layout">
 
 
@@ -99,7 +92,8 @@
 
         <div class="brand">
 
-            <img src="images/logo.png"
+            <!-- LOGO -->
+            <img src="./logo.png"
                  alt="BFC Logo">
 
             <h2>Bright Future</h2>
@@ -112,35 +106,35 @@
         <nav>
 
             <a class="active"
-               href="dashboard.html">
+               href="./dashboard.html">
                 🏠 Dashboard
             </a>
 
-            <a href="profile.html">
+            <a href="./profile.html">
                 👤 Student Profile
             </a>
 
-            <a href="attendance.html">
+            <a href="./attendance.html">
                 📊 Attendance
             </a>
 
-            <a href="results.html">
+            <a href="./results.html">
                 📚 Results
             </a>
 
-            <a href="internalmarks.html">
+            <a href="./internalmarks.html">
                 📝 Internal Marks
             </a>
 
-            <a href="fee.html">
+            <a href="./fee.html">
                 💰 Fee Details
             </a>
 
-            <a href="timetable.html">
+            <a href="./timetable.html">
                 📅 Timetable
             </a>
 
-            <a href="notifications.html">
+            <a href="./notifications.html">
                 🔔 Notifications
             </a>
 
@@ -148,7 +142,7 @@
 
 
         <a class="logout"
-           href="index.html">
+           href="./index.html">
             ↪ Logout
         </a>
 
@@ -202,7 +196,8 @@
 
         <section class="campus-banner">
 
-            <img src="images/campus.jpg"
+            <!-- CAMPUS IMAGE -->
+            <img src="./campus.jpg"
                  alt="Bright Future College Campus">
 
             <div class="banner-content">
@@ -322,7 +317,6 @@
         <section class="content-grid">
 
 
-
             <!-- PROFILE -->
 
             <div class="panel profile-panel">
@@ -333,7 +327,7 @@
                         👤 Student Information
                     </h2>
 
-                    <a href="profile.html">
+                    <a href="./profile.html">
                         View Profile
                     </a>
 
@@ -411,7 +405,7 @@
                         📅 Today's Timetable
                     </h2>
 
-                    <a href="timetable.html">
+                    <a href="./timetable.html">
                         View All
                     </a>
 
@@ -425,7 +419,6 @@
 
                 <div id="todaySchedule"
                      class="schedule">
-
                 </div>
 
             </div>
@@ -442,7 +435,7 @@
                         🔔 Notifications
                     </h2>
 
-                    <a href="notifications.html">
+                    <a href="./notifications.html">
                         View All
                     </a>
 
@@ -507,7 +500,7 @@
                 <div class="services">
 
 
-                    <a href="attendance.html">
+                    <a href="./attendance.html">
 
                         <strong>
                             📊
@@ -520,7 +513,7 @@
                     </a>
 
 
-                    <a href="results.html">
+                    <a href="./results.html">
 
                         <strong>
                             📚
@@ -533,7 +526,7 @@
                     </a>
 
 
-                    <a href="internalmarks.html">
+                    <a href="./internalmarks.html">
 
                         <strong>
                             📝
@@ -546,7 +539,7 @@
                     </a>
 
 
-                    <a href="fee.html">
+                    <a href="./fee.html">
 
                         <strong>
                             💰
@@ -559,7 +552,7 @@
                     </a>
 
 
-                    <a href="timetable.html">
+                    <a href="./timetable.html">
 
                         <strong>
                             📅
@@ -572,7 +565,7 @@
                     </a>
 
 
-                    <a href="profile.html">
+                    <a href="./profile.html">
 
                         <strong>
                             👤
@@ -617,23 +610,14 @@ const timetable = {
     Monday: [
 
         ["09:00 – 09:50 AM", "Signals and Systems"],
-
         ["09:50 – 10:40 AM", "STLD"],
-
         ["10:40 – 10:50 AM", "☕ First Break", true],
-
         ["10:50 – 11:40 AM", "EDC"],
-
         ["11:40 – 12:30 PM", "UHV"],
-
         ["12:30 – 01:20 PM", "🍱 Lunch Break", true],
-
         ["01:20 – 02:10 PM", "ES"],
-
         ["02:10 – 03:00 PM", "EDC LAB"],
-
         ["03:00 – 03:10 PM", "☕ Last Break", true],
-
         ["03:10 – 04:50 PM", "EDC LAB"]
 
     ],
@@ -642,25 +626,15 @@ const timetable = {
     Tuesday: [
 
         ["09:00 – 09:50 AM", "EDC"],
-
         ["09:50 – 10:40 AM", "Signals and Systems"],
-
         ["10:40 – 10:50 AM", "☕ First Break", true],
-
         ["10:50 – 11:40 AM", "STLD"],
-
         ["11:40 – 12:30 PM", "ES"],
-
         ["12:30 – 01:20 PM", "🍱 Lunch Break", true],
-
         ["01:20 – 02:10 PM", "UHV"],
-
         ["02:10 – 03:00 PM", "Signals and Systems"],
-
         ["03:00 – 03:10 PM", "☕ Last Break", true],
-
         ["03:10 – 04:00 PM", "EDC"],
-
         ["04:00 – 04:50 PM", "STLD"]
 
     ],
@@ -669,23 +643,14 @@ const timetable = {
     Wednesday: [
 
         ["09:00 – 09:50 AM", "STLD"],
-
         ["09:50 – 10:40 AM", "EDC"],
-
         ["10:40 – 10:50 AM", "☕ First Break", true],
-
         ["10:50 – 11:40 AM", "Signals and Systems"],
-
         ["11:40 – 12:30 PM", "ES"],
-
         ["12:30 – 01:20 PM", "🍱 Lunch Break", true],
-
         ["01:20 – 02:10 PM", "UHV"],
-
         ["02:10 – 03:00 PM", "STLD LAB"],
-
         ["03:00 – 03:10 PM", "☕ Last Break", true],
-
         ["03:10 – 04:50 PM", "STLD LAB"]
 
     ],
@@ -694,25 +659,15 @@ const timetable = {
     Thursday: [
 
         ["09:00 – 09:50 AM", "UHV"],
-
         ["09:50 – 10:40 AM", "ES"],
-
         ["10:40 – 10:50 AM", "☕ First Break", true],
-
         ["10:50 – 11:40 AM", "EDC"],
-
         ["11:40 – 12:30 PM", "STLD"],
-
         ["12:30 – 01:20 PM", "🍱 Lunch Break", true],
-
         ["01:20 – 02:10 PM", "Signals and Systems"],
-
         ["02:10 – 03:00 PM", "UHV"],
-
         ["03:00 – 03:10 PM", "☕ Last Break", true],
-
         ["03:10 – 04:00 PM", "ES"],
-
         ["04:00 – 04:50 PM", "EDC"]
 
     ],
@@ -721,25 +676,15 @@ const timetable = {
     Friday: [
 
         ["09:00 – 09:50 AM", "Signals and Systems"],
-
         ["09:50 – 10:40 AM", "EDC"],
-
         ["10:40 – 10:50 AM", "☕ First Break", true],
-
         ["10:50 – 11:40 AM", "STLD"],
-
         ["11:40 – 12:30 PM", "UHV"],
-
         ["12:30 – 01:20 PM", "🍱 Lunch Break", true],
-
         ["01:20 – 02:10 PM", "ES"],
-
         ["02:10 – 03:00 PM", "Signals and Systems"],
-
         ["03:00 – 03:10 PM", "☕ Last Break", true],
-
         ["03:10 – 04:00 PM", "EDC"],
-
         ["04:00 – 04:50 PM", "ES"]
 
     ]
@@ -784,13 +729,10 @@ const scheduleBox =
 
 if (todaySchedule) {
 
-
     todaySchedule.forEach(function(item) {
-
 
         const row =
             document.createElement("div");
-
 
         row.className =
             "schedule-item";
@@ -820,12 +762,10 @@ if (todaySchedule) {
 
         scheduleBox.appendChild(row);
 
-
     });
 
 
 } else {
-
 
     scheduleBox.innerHTML = `
 
@@ -840,7 +780,6 @@ if (todaySchedule) {
     `;
 
 }
-
 
 </script>
 
