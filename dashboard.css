@@ -83,7 +83,6 @@ body {
 .sidebar nav a,
 .logout {
     display: block;
-
     color: white;
     text-decoration: none;
 
@@ -91,7 +90,6 @@ body {
     margin: 5px 0;
 
     border-radius: 9px;
-
     font-size: 14px;
 
     transition: 0.2s;
@@ -104,11 +102,8 @@ body {
 
 .logout {
     margin-top: auto;
-
     background: #b8860b;
-
     text-align: center;
-
     font-weight: bold;
 }
 
@@ -134,7 +129,6 @@ body {
 
 .topbar {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
@@ -153,26 +147,20 @@ body {
 
 .student-mini {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
     background: white;
-
     padding: 9px 15px;
 
     border-radius: 12px;
 
-    box-shadow:
-        0 3px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
 }
 
 .student-mini small {
     display: block;
-
     color: #777;
-
     margin-top: 3px;
 }
 
@@ -181,13 +169,11 @@ body {
     height: 42px;
 
     border-radius: 50%;
-
     background: #0b4b9b;
 
     color: white;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
@@ -210,40 +196,33 @@ body {
 
     margin-bottom: 25px;
 
-    /* IMPORTANT:
-       campus.jpg is in the SAME folder
-       as dashboard.css and dashboard.html
-    */
+    background: #d9dee7;
 
-    background-image:
-        linear-gradient(
-            rgba(0, 20, 55, 0.10),
-            rgba(0, 20, 55, 0.35)
-        ),
-        url("./campus.jpg");
-
-    background-size: cover;
-
-    background-position: center center;
-
-    background-repeat: no-repeat;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 
-/* HTML IMAGE HIDDEN
-   because campus photo is used
-   as CSS background
-*/
+/* ACTUAL CAMPUS PHOTO */
 
 .campus-banner img {
-    display: none;
+    display: block;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    z-index: 0;
 }
 
 
-/* DARK PROFESSIONAL OVERLAY */
+/* DARK OVERLAY */
 
 .campus-banner::after {
     content: "";
@@ -255,7 +234,7 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 20, 55, 0.58),
+            rgba(0, 20, 55, 0.55),
             rgba(0, 20, 55, 0.08)
         );
 
@@ -273,30 +252,24 @@ body {
     position: absolute;
 
     left: 32px;
-
     bottom: 30px;
 
     z-index: 2;
 
     color: white;
 
-    text-shadow:
-        0 2px 8px rgba(0,0,0,0.85);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
 }
 
 .banner-content h2 {
     font-size: 30px;
-
     margin: 0;
-
     font-weight: 700;
 }
 
 .banner-content p {
     margin-top: 7px;
-
     font-size: 15px;
-
     font-weight: 500;
 }
 
@@ -307,12 +280,9 @@ body {
 
 .stats {
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
-
     margin-bottom: 25px;
 }
 
@@ -320,17 +290,13 @@ body {
     background: white;
 
     border-radius: 14px;
-
     padding: 20px;
 
     display: flex;
-
     align-items: center;
-
     gap: 15px;
 
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 
     transition: 0.2s;
 }
@@ -338,19 +304,16 @@ body {
 .stat-card:hover {
     transform: translateY(-2px);
 
-    box-shadow:
-        0 7px 20px rgba(0,0,0,0.09);
+    box-shadow: 0 7px 20px rgba(0,0,0,0.09);
 }
 
 .stat-card span {
     color: #777;
-
     font-size: 13px;
 }
 
 .stat-card h2 {
     margin-top: 7px;
-
     color: #172033;
 }
 
@@ -361,7 +324,6 @@ body {
     border-radius: 12px;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
@@ -393,9 +355,7 @@ body {
 
 .content-grid {
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 20px;
 }
@@ -404,16 +364,13 @@ body {
     background: white;
 
     border-radius: 14px;
-
     padding: 22px;
 
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
 .panel-title {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
 
@@ -422,7 +379,6 @@ body {
 
 .panel-title h2 {
     font-size: 17px;
-
     color: #06285f;
 }
 
@@ -432,7 +388,6 @@ body {
     color: #0b4b9b;
 
     font-size: 13px;
-
     font-weight: bold;
 }
 
@@ -447,9 +402,7 @@ body {
 
 .profile-info {
     display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 18px;
 }
@@ -479,13 +432,11 @@ body {
     font-size: 13px;
 
     margin-top: -8px;
-
     margin-bottom: 15px;
 }
 
 .schedule {
     display: flex;
-
     flex-direction: column;
 
     gap: 9px;
@@ -495,7 +446,6 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 12px;
@@ -513,7 +463,6 @@ body {
     color: #0b4b9b;
 
     font-size: 12px;
-
     font-weight: bold;
 
     min-width: 125px;
@@ -523,7 +472,6 @@ body {
     color: #06285f;
 
     font-size: 14px;
-
     font-weight: bold;
 
     text-align: right;
@@ -531,28 +479,12 @@ body {
 
 .break-item {
     border-left-color: #999;
-
     background: #f1f1f1;
 }
 
 .break-item .schedule-time,
 .break-item .schedule-subject {
     color: #777;
-}
-
-@media (max-width: 600px) {
-
-    .schedule-item {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 4px;
-    }
-
-    .schedule-subject {
-        text-align: left;
-    }
 }
 
 
@@ -574,13 +506,11 @@ body {
 
 .notification b {
     display: block;
-
     font-size: 13px;
 }
 
 .notification span {
     color: #777;
-
     font-size: 12px;
 }
 
@@ -596,8 +526,7 @@ body {
 .services {
     display: grid;
 
-    grid-template-columns:
-        repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 
     gap: 12px;
 }
@@ -620,7 +549,6 @@ body {
 
 .services a:hover {
     background: #e8f0ff;
-
     transform: translateY(-2px);
 }
 
@@ -634,7 +562,6 @@ body {
 
 .services span {
     font-size: 12px;
-
     font-weight: bold;
 }
 
@@ -673,13 +600,11 @@ footer {
     }
 
     .stats {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .services {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -693,7 +618,6 @@ footer {
     html,
     body {
         width: 100%;
-
         overflow-x: hidden;
     }
 
@@ -704,7 +628,6 @@ footer {
         display: block;
 
         width: 100%;
-
         min-height: auto;
     }
 
@@ -744,15 +667,14 @@ footer {
     }
 
 
-    /* MOBILE NAV */
+    /* MOBILE NAVIGATION */
 
     .sidebar nav {
         margin-top: 15px;
 
         display: grid;
 
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         gap: 5px;
     }
@@ -811,7 +733,7 @@ footer {
 
 
     /* =====================================
-       MOBILE CAMPUS BANNER
+       MOBILE CAMPUS BANNER - FIXED
        ===================================== */
 
     .campus-banner {
@@ -823,28 +745,67 @@ footer {
 
         margin-bottom: 18px;
 
-        background-image:
-            linear-gradient(
-                rgba(0, 20, 55, 0.10),
-                rgba(0, 20, 55, 0.35)
-            ),
-            url("./campus.jpg");
+        position: relative;
 
-        background-size: cover;
+        overflow: hidden;
 
-        background-position: center center;
+        background: #d9dee7;
 
-        background-repeat: no-repeat;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
+
+
+    /* SHOW CAMPUS IMAGE */
 
     .campus-banner img {
-        display: none;
+        display: block;
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center center;
+
+        z-index: 0;
     }
+
+
+    /* MOBILE OVERLAY */
+
+    .campus-banner::after {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0,20,55,0.55),
+                rgba(0,20,55,0.10)
+            );
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+
+    /* MOBILE BANNER TEXT */
 
     .banner-content {
         left: 18px;
 
         bottom: 18px;
+
+        z-index: 2;
     }
 
     .banner-content h2 {
@@ -859,8 +820,7 @@ footer {
     /* STATS */
 
     .stats {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         gap: 10px;
 
@@ -945,8 +905,7 @@ footer {
     }
 
     .services {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         gap: 9px;
     }
