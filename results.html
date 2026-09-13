@@ -1,282 +1,589 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Results - Bright Future College</title>
+<title>Results - Bright Future College</title>
 
-    <link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="dashboard.css">
 
-    <style>
+<style>
 
-        body {
-            margin: 0;
-            background: #f4f7fb;
-            font-family: Arial, sans-serif;
-        }
+body {
+    margin: 0;
+    background: #f4f7fb;
+    font-family: Arial, sans-serif;
+}
 
-        .results-page {
-            max-width: 1100px;
-            margin: auto;
-            padding: 25px;
-        }
+.results-page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
 
-        .results-page h1 {
-            color: #06285f;
-            margin-bottom: 5px;
-        }
+.results-page h1 {
+    color: #06285f;
+    margin-bottom: 5px;
+}
 
-        .subtitle {
-            color: #777;
-            margin-bottom: 25px;
-        }
+.subtitle {
+    color: #777;
+    margin-bottom: 25px;
+}
 
-        /* RESULT NOTICE */
+/* NOTICE */
 
-        .result-notice {
-            background: white;
-            padding: 25px;
-            border-radius: 16px;
-            text-align: center;
+.result-notice {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    border-left: 5px solid #16a34a;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
 
-            border-left: 5px solid #0b4b9b;
+.result-notice .icon {
+    font-size: 45px;
+}
 
-            box-shadow:
-                0 5px 18px rgba(0,0,0,0.08);
+.result-notice h2 {
+    color: #166534;
+    margin: 8px 0;
+}
 
-            margin-bottom: 25px;
-        }
+.result-notice p {
+    color: #777;
+}
 
-        .result-notice .icon {
-            font-size: 45px;
-            margin-bottom: 10px;
-        }
+/* SUMMARY */
 
-        .result-notice h2 {
-            color: #06285f;
-            margin: 5px 0 10px;
-        }
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
 
-        .result-notice p {
-            color: #777;
-            margin: 0;
-        }
+.result-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    border-top: 4px solid #0b4b9b;
+    text-align: center;
+}
 
-        /* EMPTY RESULT CARDS */
+.result-card h2 {
+    color: #06285f;
+    margin: 0 0 12px;
+}
 
-        .result-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(3, 1fr);
+.main-value {
+    font-size: 32px;
+    color: #0b4b9b;
+    font-weight: bold;
+}
 
-            gap: 18px;
-        }
+.pending {
+    margin-top: 8px;
+    color: #777;
+    font-size: 13px;
+}
 
-        .result-card {
-            background: white;
-            min-height: 150px;
+/* SUBJECT */
 
-            padding: 22px;
+.subject-section {
+    margin-top: 30px;
+}
 
-            border-radius: 14px;
+.section-title {
+    color: #06285f;
+    margin-bottom: 15px;
+}
 
-            box-shadow:
-                0 4px 15px rgba(0,0,0,0.07);
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
 
-            border-top: 4px solid #d9e1ec;
+.subject-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    border-left: 5px solid #0b4b9b;
+}
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+.subject-name {
+    color: #06285f;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
 
-            text-align: center;
-        }
+.subject-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
 
-        .result-card h2 {
-            color: #06285f;
-            margin: 0 0 12px;
-        }
+.detail-box {
+    background: #f4f7fb;
+    padding: 12px 5px;
+    border-radius: 8px;
+    text-align: center;
+}
 
-        .empty-value {
-            font-size: 30px;
-            color: #c5ccd6;
-            font-weight: bold;
-        }
+.detail-label {
+    display: block;
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 6px;
+}
 
-        .pending {
-            margin-top: 8px;
-            color: #888;
-            font-size: 13px;
-        }
+.detail-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: #06285f;
+}
 
-        /* BACK BUTTON */
+.total-box {
+    background: #eaf2ff;
+}
 
-        .back-btn {
-            display: inline-block;
+.total-box .detail-value {
+    color: #0b4b9b;
+}
 
-            margin-top: 25px;
+.grade-box {
+    margin-top: 12px;
+    padding: 10px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    text-align: center;
+    color: #166534;
+    font-weight: bold;
+}
 
-            padding: 11px 18px;
+/* BACK */
 
-            background: #0b4b9b;
+.back-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 11px 18px;
+    background: #0b4b9b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
 
-            color: white;
+.back-btn:hover {
+    background: #06285f;
+}
 
-            text-decoration: none;
+/* MOBILE */
 
-            border-radius: 8px;
-        }
+@media (max-width: 700px) {
 
-        .back-btn:hover {
-            background: #06285f;
-        }
+    .results-page {
+        padding: 15px;
+    }
 
-        /* MOBILE */
+    .result-grid,
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
 
-        @media (max-width: 700px) {
+    .subject-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-            .results-page {
-                padding: 15px;
-            }
+}
 
-            .result-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
-
 <body>
-
 
 <div class="results-page">
 
+<h1>📄 Semester Results</h1>
 
-    <h1>
-        📄 Semester Results
-    </h1>
+<p class="subtitle">
+    II B.Tech • ECE
+</p>
 
-    <p class="subtitle">
-        II B.Tech • ECE
+
+<!-- RESULT RELEASED -->
+
+<div class="result-notice">
+
+    <div class="icon">🎉</div>
+
+    <h2>Results Released</h2>
+
+    <p>
+        Semester examination results have been successfully released.
     </p>
-
-
-    <!-- RESULT NOTICE -->
-
-    <div class="result-notice">
-
-        <div class="icon">
-            📋
-        </div>
-
-        <h2>
-            Results Not Released
-        </h2>
-
-        <p>
-            Results will be updated after the semester examinations.
-        </p>
-
-    </div>
-
-
-    <!-- EMPTY RESULT BOXES -->
-
-    <div class="result-grid">
-
-
-        <div class="result-card">
-
-            <h2>
-                SGPA
-            </h2>
-
-            <div class="empty-value">
-                —
-            </div>
-
-            <div class="pending">
-                Awaiting Result
-            </div>
-
-        </div>
-
-
-        <div class="result-card">
-
-            <h2>
-                CGPA
-            </h2>
-
-            <div class="empty-value">
-                —
-            </div>
-
-            <div class="pending">
-                Awaiting Result
-            </div>
-
-        </div>
-
-
-        <div class="result-card">
-
-            <h2>
-                Result Status
-            </h2>
-
-            <div class="empty-value">
-                —
-            </div>
-
-            <div class="pending">
-                Not Available
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- SUBJECT RESULTS -->
-
-    <div class="result-notice"
-         style="margin-top:22px;">
-
-        <h2>
-            📚 Subject Results
-        </h2>
-
-        <p>
-            Subject-wise marks and grades will be displayed here
-            after the semester examinations and result declaration.
-        </p>
-
-    </div>
-
-
-    <a href="dashboard.html"
-       class="back-btn">
-
-        ⬅ Back to Dashboard
-
-    </a>
-
 
 </div>
 
 
+<!-- SUMMARY -->
+
+<div class="result-grid">
+
+    <div class="result-card">
+
+        <h2>SGPA</h2>
+
+        <div class="main-value">
+            8.19
+        </div>
+
+        <div class="pending">
+            Current Semester
+        </div>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <h2>CGPA</h2>
+
+        <div class="main-value">
+            6.92
+        </div>
+
+        <div class="pending">
+            Overall
+        </div>
+
+    </div>
+
+
+    <div class="result-card">
+
+        <h2>Result Status</h2>
+
+        <div class="main-value">
+            PASS
+        </div>
+
+        <div class="pending">
+            Semester Result
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SUBJECT RESULTS -->
+
+<div class="subject-section">
+
+<h2 class="section-title">
+    📚 Subject-wise Results
+</h2>
+
+<div class="subject-grid">
+
+
+<!-- SIGNALS -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+    Signals & Systems
+</div>
+
+<div class="subject-details">
+
+<div class="detail-box">
+<span class="detail-label">Mid-1</span>
+<span class="detail-value">21/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Mid-2</span>
+<span class="detail-value">14/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Semester</span>
+<span class="detail-value">60/70</span>
+</div>
+
+<div class="detail-box total-box">
+<span class="detail-label">Total</span>
+<span class="detail-value">79.6/100</span>
+</div>
+
+</div>
+
+<div class="grade-box">
+Grade: B+ &nbsp; | &nbsp; Grade Point: 8
+</div>
+
+</div>
+
+
+<!-- STLD -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+    STLD
+</div>
+
+<div class="subject-details">
+
+<div class="detail-box">
+<span class="detail-label">Mid-1</span>
+<span class="detail-value">21/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Mid-2</span>
+<span class="detail-value">19/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Semester</span>
+<span class="detail-value">61/70</span>
+</div>
+
+<div class="detail-box total-box">
+<span class="detail-label">Total</span>
+<span class="detail-value">81.6/100</span>
+</div>
+
+</div>
+
+<div class="grade-box">
+Grade: A &nbsp; | &nbsp; Grade Point: 9
+</div>
+
+</div>
+
+
+<!-- EDC -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+    EDC
+</div>
+
+<div class="subject-details">
+
+<div class="detail-box">
+<span class="detail-label">Mid-1</span>
+<span class="detail-value">23/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Mid-2</span>
+<span class="detail-value">19/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Semester</span>
+<span class="detail-value">60/70</span>
+</div>
+
+<div class="detail-box total-box">
+<span class="detail-label">Total</span>
+<span class="detail-value">82.2/100</span>
+</div>
+
+</div>
+
+<div class="grade-box">
+Grade: A &nbsp; | &nbsp; Grade Point: 9
+</div>
+
+</div>
+
+
+<!-- ES -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+    ES
+</div>
+
+<div class="subject-details">
+
+<div class="detail-box">
+<span class="detail-label">Mid-1</span>
+<span class="detail-value">17/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Mid-2</span>
+<span class="detail-value">21/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Semester</span>
+<span class="detail-value">59/70</span>
+</div>
+
+<div class="detail-box total-box">
+<span class="detail-label">Total</span>
+<span class="detail-value">79.2/100</span>
+</div>
+
+</div>
+
+<div class="grade-box">
+Grade: B+ &nbsp; | &nbsp; Grade Point: 8
+</div>
+
+</div>
+
+
+<!-- UHV -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+    UHV
+</div>
+
+<div class="subject-details">
+
+<div class="detail-box">
+<span class="detail-label">Mid-1</span>
+<span class="detail-value">18/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Mid-2</span>
+<span class="detail-value">21/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Semester</span>
+<span class="detail-value">49/70</span>
+</div>
+
+<div class="detail-box total-box">
+<span class="detail-label">Total</span>
+<span class="detail-value">69.4/100</span>
+</div>
+
+</div>
+
+<div class="grade-box">
+Grade: B &nbsp; | &nbsp; Grade Point: 7
+</div>
+
+</div>
+
+
+<!-- EDC LAB -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+    EDC Lab
+</div>
+
+<div class="subject-details">
+
+<div class="detail-box">
+<span class="detail-label">Mid-1</span>
+<span class="detail-value">19/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Mid-2</span>
+<span class="detail-value">19/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Semester</span>
+<span class="detail-value">50/70</span>
+</div>
+
+<div class="detail-box total-box">
+<span class="detail-label">Total</span>
+<span class="detail-value">69/100</span>
+</div>
+
+</div>
+
+<div class="grade-box">
+Grade: B &nbsp; | &nbsp; Grade Point: 7
+</div>
+
+</div>
+
+
+<!-- STLD LAB -->
+
+<div class="subject-card">
+
+<div class="subject-name">
+    STLD Lab
+</div>
+
+<div class="subject-details">
+
+<div class="detail-box">
+<span class="detail-label">Mid-1</span>
+<span class="detail-value">18/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Mid-2</span>
+<span class="detail-value">18/30</span>
+</div>
+
+<div class="detail-box">
+<span class="detail-label">Semester</span>
+<span class="detail-value">53/70</span>
+</div>
+
+<div class="detail-box total-box">
+<span class="detail-label">Total</span>
+<span class="detail-value">71/100</span>
+</div>
+
+</div>
+
+<div class="grade-box">
+Grade: B+ &nbsp; | &nbsp; Grade Point: 8
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<a href="dashboard.html" class="back-btn">
+    ⬅ Back to Dashboard
+</a>
+
+</div>
+
 </body>
 
 </html>
+```
